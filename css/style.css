@@ -1,0 +1,237 @@
+body {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 0px;
+}
+.wrapper {
+   overflow: hidden;
+   min-height: 100%;
+   position: relative;
+   background: url("../img/stadium.jpg") 0 0 / cover no-repeat;
+}
+
+.image {
+   height: 130px;
+   width: 130px;
+}
+.header__logo {
+   animation: uefa-ball;
+   animation-duration: 5s;
+   animation-delay: 3s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+   position: absolute;
+   top: 20px;
+   left: 50px;
+}
+@keyframes uefa-ball {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+}
+.header__menu {
+   display: inline-block;
+   font-size: 24px;
+}
+
+.header__title {
+   position: absolute;
+   top: 42px;
+   left: 180px;
+   color: white;
+   font-weight: 900;
+   text-transform: uppercase;
+   text-align: center;
+}
+.header__uefa {
+   padding: 2px 0px 2px;
+   animation: header__uefa 1.5s ease 1s forwards;
+   transform: translate(0, 100%);
+   opacity: 0;
+}
+@keyframes header__uefa {
+   0% {
+      transform: translate(0, 100%);
+      opacity: 0;
+   }
+   100% {
+      transform: translate(0, 0);
+      opacity: 1;
+   }
+}
+.header__uefa::before {
+   content: "";
+   position: absolute;
+   top: 1px;
+   left: 48px;
+   width: 70px;
+   height: 1px;
+   background-color: #fff;
+}
+.header__uefa::after {
+   content: "";
+   position: absolute;
+   top: 27px;
+   left: 48px;
+   width: 70px;
+   height: 1px;
+   background-color: #fff;
+}
+
+.header__title p:not(:last-child) {
+   margin-bottom: 5px;
+}
+.header__champion {
+   transform: translate(300%, 0);
+   opacity: 0;
+   animation: champion 2s 3s ease forwards;
+}
+@keyframes champion {
+   0% {
+      transform: translateX(600%);
+      opacity: 0;
+   }
+   100% {
+      transform: translateX(0);
+      opacity: 1;
+   }
+}
+.header__title p:last-child {
+   font-weight: 700;
+   font-size: 18px;
+   transform: translateY(-100%);
+   opacity: 0;
+   animation: last-p 1.5s ease 1.5s forwards;
+}
+
+@keyframes last-p {
+   0% {
+      transform: translateY(-100%);
+      opacity: 0;
+   }
+   100% {
+      transform: translateY(0);
+      opacity: 1;
+   }
+}
+.main__player {
+   width: 350px;
+}
+.footplayer {
+   width: 100%;
+}
+.main__game {
+   position: relative;
+   left: 0;
+   top: 0;
+}
+.main__player {
+   display: inline-block;
+}
+.main__player:first-child {
+   z-index: 2;
+   position: absolute;
+   left: 0;
+   top: 300px;
+   animation-name: first-child;
+   animation-duration: 5s;
+   animation-delay: 5s;
+   animation-timing-function: linear;
+   animation-iteration-count: 8;
+   animation-fill-mode: backwards;
+}
+@keyframes first-child {
+   0% {
+      transform: rotate(0deg);
+   }
+   1.5% {
+      transform: rotate(20deg);
+   }
+   4% {
+      transform: rotate(-10deg);
+   }
+   100% {
+      transform: rotate(0deg);
+   }
+}
+.main__player:last-child {
+   z-index: 2;
+   position: absolute;
+   left: 1200px;
+   top: 300px;
+   animation-name: last-child;
+   animation-duration: 5s;
+   animation-delay: 7.5s;
+   animation-timing-function: linear;
+   animation-iteration-count: 8;
+   animation-fill-mode: backwards;
+}
+@keyframes last-child {
+   0% {
+      transform: rotate(0deg);
+   }
+   1.5% {
+      transform: rotate(20deg);
+   }
+   4% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(0deg);
+   }
+}
+.main__ball {
+   z-index: 100;
+   position: absolute;
+   top: 620px;
+   left: 90px;
+   width: 50px;
+}
+.ball {
+   width: 100%;
+   animation-name: ball-game;
+   animation-duration: 2.5s;
+   animation-delay: 5s;
+   animation-timing-function: linear;
+   animation-iteration-count: 16;
+   animation-direction: alternate;
+   animation-fill-mode: forwards;
+}
+
+@keyframes ball-game {
+   0% {
+      transform: translate(0, 0) rotate(0deg);
+   }
+   10% {
+      transform: translate(118px, -60px) rotate(0deg);
+   }
+   20% {
+      transform: translate(236px, -120px) rotate(-36deg);
+   }
+   30% {
+      transform: translate(354px, -180px) rotate(-72deg);
+   }
+   40% {
+      transform: translate(472px, -220px) rotate(-108deg);
+   }
+   50% {
+      transform: translate(590px, -240px) rotate(-144deg);
+   }
+   60% {
+      transform: translate(708px, -220px) rotate(-180deg);
+   }
+   70% {
+      transform: translate(826px, -180px) rotate(-216deg);
+   }
+   80% {
+      transform: translate(944px, -120px) rotate(-252deg);
+   }
+   90% {
+      transform: translate(1062px, -60px) rotate(-288deg);
+   }
+   100% {
+      transform: translate(1180px, 0) rotate(-360deg);
+   }
+}
